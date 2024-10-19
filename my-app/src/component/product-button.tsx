@@ -1,5 +1,3 @@
-import { useCartContext } from "../store/cart-context";
-
 type ProductButtonProps = {
   label: string;
   price: number;
@@ -11,17 +9,17 @@ export const ProductButton = ({
   price,
   onClick,
 }: ProductButtonProps) => {
-  const { addItem } = useCartContext();
-
-  const handleProductClick = () => {
-    addItem({ name: label, price });
+  const handleClick = () => {
+    if (onClick) {
+      onClick(label, price);
+    }
   };
 
   return (
     <div style={{ display: "flex", gap: 16 }}>
       <p>{label}</p>
       <p>Price: ${price}</p>
-      <button onClick={handleProductClick}>Add</button>
+      <button onClick={handleClick}>Add</button>
     </div>
   );
 };
