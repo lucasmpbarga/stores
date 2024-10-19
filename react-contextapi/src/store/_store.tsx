@@ -1,10 +1,10 @@
 import { ReactElement, ReactNode } from "react";
-import { CartContext } from "./cart-context";
+import { CartProvider } from "./cart-context";
 
 interface StoreProviderProps {
   children: ReactElement | ReactElement[] | ReactNode;
 }
 
 export const StoreProvider = ({ children }: StoreProviderProps) => (
-  <CartContext>{children}</CartContext>
+  <CartProvider>{children}</CartProvider>
 );

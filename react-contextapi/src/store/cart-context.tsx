@@ -19,7 +19,7 @@ interface CartContextProps {
   children: ReactNode | ReactNode[];
 }
 
-export function CartContext({ children }: CartContextProps) {
+export function CartProvider({ children }: CartContextProps) {
   const [items, setItems] = useState<Item[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
 

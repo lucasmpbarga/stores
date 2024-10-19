@@ -1,29 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useCartContext } from "../store/cart-context";
 
 const ItemsList = () => {
   const { items } = useCartContext();
-  const [itemsListRenders, setItemsListRenders] = useState(0);
 
-  useEffect(() => {
-    setItemsListRenders((prev) => prev + 1);
-  }, [items]);
+  const itemsListRenders = useRef(0);
+  itemsListRenders.current += 1;
 
   return (
     <div>
       <h1>Cart</h1>
       <p>Items in cart: {items.length}</p>
-      <p>Items list renders: {itemsListRenders}</p>
+      <p>Items list renders: {itemsListRenders.current}</p>
     </div>
   );
 };
 
 const TotalPrice = () => {
   const { totalPrice } = useCartContext();
-  const totalPriceRenders = useRef(0);
 
+  const totalPriceRenders = useRef(0);
   totalPriceRenders.current += 1;
 
   return (
