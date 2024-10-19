@@ -15,11 +15,11 @@ export interface CartContextState {
 
 const TabsContext = createContext({});
 
-interface WrapperProps {
+interface CartContextProps {
   children: ReactNode | ReactNode[];
 }
 
-export function CartContextWrapper({ children }: WrapperProps) {
+export function CartContext({ children }: CartContextProps) {
   const [items, setItems] = useState<Item[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
 

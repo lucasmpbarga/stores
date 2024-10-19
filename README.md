@@ -1,8 +1,12 @@
 ### Stores
 
+- **Context API + Flux Pattern**:
+
+  - It did not work as expected, generating many rerenders.
+
 - **Context API**:
 
-  - In general, regardless of the pattern used, the Context API can cause many re-renders.
+  - The Context API with this configuration worked very well and did not cause any type of re-rendering.
 
 - **Redux**:
 
