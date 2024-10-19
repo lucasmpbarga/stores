@@ -1,4 +1,4 @@
-import { useCartContext } from "@/store/cart-context";
+import { useCartContext } from "../store/cart-context";
 
 export const DonateButton = () => {
   const { addDonation } = useCartContext();
