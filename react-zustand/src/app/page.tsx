@@ -1,13 +1,17 @@
 "use client";
+
 import { Cart } from "@/component/cart";
 import { DonateButton } from "@/component/donation-button";
 import { ProductButton } from "@/component/product-button";
-import { addItem, store } from "@/store/store";
-import "./page.module.css";
+import { useCartStore } from "@/store/cart-store";
 
 export default function Home() {
+  const { addItem, items } = useCartStore();
+
   const handleProductClick = (label: string, price: number) => {
-    store.dispatch(addItem({ name: label, price }));
+    const newItem = { name: label, price };
+
+    addItem(newItem);
   };
 
   return (

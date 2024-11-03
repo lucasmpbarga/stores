@@ -1,8 +1,6 @@
 "use client";
-import { store } from "@/store/store";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import { Provider } from "react-redux";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -30,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider store={store}>{ready && children}</Provider>
+        {ready && children}
       </body>
     </html>
   );
