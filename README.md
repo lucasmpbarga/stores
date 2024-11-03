@@ -21,4 +21,8 @@
   - Vue handles re-renders better than React. Its reactive system does not allow for complex configurations like the Context API, which can result in "prop drilling." However, the re-renders doens't happen.
 
 - **Pinia**:
+
   - Pinia, recommended by the official vue.js doc, is the best option for using stores in Vue.js. Besides being easy and practical to configure, it has no issues with re-renders.
+
+- **Zustand**:
+  - Zustand is a lightweight and straightforward state management store designed to minimize verbosity while providing an easy-to-use API. However, it can still lead to some unnecessary re-renders. To optimize performance, it is recommended to use Zustand in conjunction with memo to prevent unnecessary rendes in your components.
